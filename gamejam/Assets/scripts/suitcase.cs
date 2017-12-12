@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,33 +13,30 @@ public class suitcase : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		PlayerPrefs.SetString("order", "blue_shirt,green_shirt,purple_shirt");
 		currentlyHolding = new ArrayList();
-		
+		string order = PlayerPrefs.GetString("order");
+		Debug.Log(order);
+		arrOrder = order.Split(',');
 		//PROOF
-		arrOrder = new string[4];
-		sizeOfOrder = 4;
-		arrOrder[0] = "blue_shirt";
-		arrOrder[1] = "blue_pants";
-		arrOrder[2] = "blue_shoes";
-		arrOrder[3] = "blue_underwear";
+		sizeOfOrder = arrOrder.Length;
+		Debug.Log(sizeOfOrder + "<- size of order");
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		for (int i = 0; i < currentlyHolding.Count; i++)
-		{
-			Debug.Log(currentlyHolding[i]);
-		}
+		PrettyPrint(currentlyHolding);
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		currentlyHolding.Add(other.gameObject.name);
+		Debug.Log(currentlyHolding.Count);
 		Debug.Log("ADDED");
 		if (CheckIfFinished())
 		{
-			Debug.Log("DONE");
+			Debug.Log("YOU WIN");
 		}
 		else
 		{
@@ -48,7 +46,9 @@ public class suitcase : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
+		Debug.Log("REMOVE");
 		currentlyHolding.Remove(other.gameObject.name);
+		Debug.Log(currentlyHolding.Count);
 	}
 
 	bool CheckIfFinished()
@@ -62,6 +62,7 @@ public class suitcase : MonoBehaviour
 		{
 			for (int i = 0; i < sizeOfOrder; i++)
 			{
+				Debug.Log("Checking if" + arrOrder[i] + " is in the currentlyHolding.");
 				if (currentlyHolding.Contains(arrOrder[i]))
 				{
 					returnMe = true;
@@ -73,5 +74,16 @@ public class suitcase : MonoBehaviour
 			}
 			return returnMe;
 		}
+	}
+
+	void PrettyPrint(ArrayList arr)
+	{
+		Debug.Log("PRETTY PRINT");
+		String s = "";
+		for (int i = 0; i < arr.Count; i++)
+		{
+			s += (arr[i]) + ", ";
+		}
+		Debug.Log(s);
 	}
 }

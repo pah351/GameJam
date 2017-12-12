@@ -65,7 +65,7 @@ public class clickAndDrag : MonoBehaviour
 					draggingItem = true;
 					draggedObject = hit.transform.gameObject;
 					touchOffset = (Vector2)hit.transform.position - inputPosition;
-					draggedObject.transform.localScale = new Vector3(1.2f,1.2f,1.2f);
+					draggedObject.transform.localScale = new Vector3(0.6f,0.6f,0.6f);
 				}
  
 			}
@@ -74,7 +74,7 @@ public class clickAndDrag : MonoBehaviour
 	void DropItem()
 	{
 		draggingItem = false;
-		draggedObject.transform.localScale = new Vector3(1f,1f,1f);
+		draggedObject.transform.localScale = new Vector3(.4f,.4f,.4f);
 	}
 	
 }
