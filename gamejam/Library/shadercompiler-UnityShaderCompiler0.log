@@ -1,5 +1,6 @@
 Base path: /Applications/Unity/Unity.app/Contents
 Cmd: initializeCompiler
+<<<<<<< HEAD
 Cmd: compileSnippet
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -39,3 +40,5 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=15 type=1 insize=1502 outsize=0 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME ok=1
 >>>>>>> cmMonday11
+=======
+>>>>>>> 3814548746f8c31a3470a06866398a45cdda74b4
