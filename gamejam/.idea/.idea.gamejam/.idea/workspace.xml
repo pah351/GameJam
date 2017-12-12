@@ -15,8 +15,8 @@
       <file leaf-file-name="clickAndDrag.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/scripts/clickAndDrag.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+            <state relative-caret-position="405">
+              <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
               <folding>
                 <marker date="1513011185539" expanded="false" signature="6:78" ph="..." />
                 <marker date="1513011185539" expanded="true" signature="121:1490" ph="{...}" />
@@ -174,12 +174,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1513006329436</updated>
-      <workItem from="1513006331806" duration="3363000" />
+      <workItem from="1513006331806" duration="3505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3363000" />
+    <option name="totallyTimeSpent" value="3505000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -261,8 +261,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/clickAndDrag.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+        <state relative-caret-position="405">
+          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
           <folding>
             <marker date="1513011185539" expanded="false" signature="6:78" ph="..." />
             <marker date="1513011185539" expanded="true" signature="121:1490" ph="{...}" />
