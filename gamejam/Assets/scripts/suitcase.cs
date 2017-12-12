@@ -13,7 +13,7 @@ public class suitcase : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		PlayerPrefs.SetString("order", "blue_shirt,green_shirt,purple_shirt");
+		//PlayerPrefs.SetString("order", "blue_shirt,green_shirt,purple_shirt");
 		currentlyHolding = new ArrayList();
 		string order = PlayerPrefs.GetString("order");
 		Debug.Log(order);

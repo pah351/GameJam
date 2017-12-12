@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/PackOpen.unity
+    guid: 9ba69991770be4b4db93d5711e7153f1
+  - enabled: 1
+    path: Assets/scenes/packingGameScene.unity
+    guid: e50a02e4575cd473f9f04130bcb152b5

@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Assertions.Comparers;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -93,6 +93,13 @@ public class GameManager : MonoBehaviour
 		{
 			PatternDisplay.text = ColorItem[m].ToString();
 			m++;
+		}
+		if (m == OrderNumber)
+		{
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				SceneManager.LoadScene(1);
+			}
 		}
 	}
 }
