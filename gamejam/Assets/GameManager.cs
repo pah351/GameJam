@@ -17,14 +17,15 @@ public class GameManager : MonoBehaviour
 	public Text PatternDisplay;
 	public string[] Items;
 	public string[] Colors;
-	public ArrayList[] ColorItem;
+	public ArrayList ColorItem;
 	public int OrderNumber;
-	
+	int m = 0;
+
 	// Use this for initialization
 	void Start()
 	{
-		Items = new string[5];
-		Colors = new string[5];
+		Items = new string[4];
+		Colors = new string[4];
 		Items[0] = "shirt";
 		Items[1] = "pants";
 		Items[2] = "underwear";
@@ -36,31 +37,33 @@ public class GameManager : MonoBehaviour
 		Colors[3] = "purple";
 
 		int check = 0;
-		ArrayList ColorItem = new ArrayList();
+		ColorItem = new ArrayList();
 		for (int i = 0; i < OrderNumber; i++)
 		{
 			ColorItem.Add("");
 		}
 		bool test = false;
 		
-			String item = Colors[Random.Range(0, 4)] + "-" + Items[Random.Range(0, 4)];
-			while(test==false)
-				if (ColorItem.Contains(item))
+		String item = Colors[Random.Range(0, 4)] + "_" + Items[Random.Range(0, 4)];
+		while (test == false)
+		{
+			if (ColorItem.Contains(item))
+			{
+				item = Colors[Random.Range(0, 4)] + "_" + Items[Random.Range(0, 4)];
+			}
+			else
+			{
+				if (check == OrderNumber)
 				{
-					item = Colors[Random.Range(0, 4)] + "-" + Items[Random.Range(0, 4)];
+					test = true;
 				}
 				else
 				{
-					if (check == OrderNumber)
-					{
-						test = true;
-					}
-					else
-					{
-						ColorItem[check] = item;
-						check++;
-					}
+					ColorItem[check] = item;
+					check++;
 				}
+			}
+		}
 		String passMe = "";
 		for (int i = 0; i < OrderNumber; i++)
 		{
@@ -74,19 +77,25 @@ public class GameManager : MonoBehaviour
 			}
 		}
 		PlayerPrefs.SetString("order", passMe);
+		Debug.Log(ColorItem[0]);
 
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
-		PatternDisplay.text = "The pattern is: " + ColorItem[0] + ", " + ColorItem[1] + ", " + ColorItem[2] + ", " + ColorItem[3] + ".";
-
+		if (m == 0)
+		{
+			PatternDisplay.text = ("The pattern is: ");
+		}
+		
+		if (Input.GetKeyDown(KeyCode.Space) && m != OrderNumber)
+		{
+			PatternDisplay.text = ColorItem[m].ToString();
+			m++;
+		}
 	}
-
-	public void SayPattern()
-	{
-
-	}
-	
 }
+	
+	
+
