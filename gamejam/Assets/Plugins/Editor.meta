@@ -1,10 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: c41cb02dd126541ab8f54c7310af8b9b
 folderAsset: yes
 timeCreated: 1513006117
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
+=======
+guid: 5eea7dc06266946cab0f996bdcab5840
+folderAsset: yes
+timeCreated: 1513006579
+licenseType: Free
+DefaultImporter:
+>>>>>>> cmMonday11
   userData: 
   assetBundleName: 
   assetBundleVariant: 
