@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 1068117770}
   - component: {fileID: 1068117772}
   - component: {fileID: 1068117771}
+  - component: {fileID: 1068117773}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -266,6 +267,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1068117769}
+--- !u!114 &1068117773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1068117769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b92fd84d995445ca3feeaac71676aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patternDisplay: {fileID: 1068117771}
+  Items: []
+  Colors: []
+  orderNumber: 8
 --- !u!1 &1245238209
 GameObject:
   m_ObjectHideFlags: 0

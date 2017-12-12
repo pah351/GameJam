@@ -14,11 +14,11 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour
 {
 	
-	public Text patternDisplay;
+	public Text PatternDisplay;
 	public string[] Items;
 	public string[] Colors;
 	public ArrayList[] ColorItem;
-	public int orderNumber;
+	public int OrderNumber;
 	
 	// Use this for initialization
 	void Start()
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
 		int check = 0;
 		ArrayList ColorItem = new ArrayList();
-		for (int i = 0; i < orderNumber; i++)
+		for (int i = 0; i < OrderNumber; i++)
 		{
 			ColorItem.Add("");
 		}
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 				}
 				else
 				{
-					if (check == orderNumber)
+					if (check == OrderNumber)
 					{
 						test = true;
 					}
@@ -62,9 +62,9 @@ public class GameManager : MonoBehaviour
 					}
 				}
 		String passMe = "";
-		for (int i = 0; i < orderNumber; i++)
+		for (int i = 0; i < OrderNumber; i++)
 		{
-			if (i != orderNumber - 1)
+			if (i != OrderNumber - 1)
 			{
 				passMe += ColorItem[i] + ",";
 			}
@@ -80,11 +80,12 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		PatternDisplay.text = "The pattern is: " + ColorItem[0] + ", " + ColorItem[1] + ", " + ColorItem[2] + ", " + ColorItem[3] + ".";
+
 	}
 
 	public void SayPattern()
 	{
-		patternDisplay.text = "The pattern is: " + ColorItem[0] + ", " + ColorItem[1] + ", " + ColorItem[2] + ", " + ColorItem[3] + ".";
 
 	}
 	
