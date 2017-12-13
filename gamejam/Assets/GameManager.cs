@@ -20,10 +20,25 @@ public class GameManager : MonoBehaviour
 	public ArrayList ColorItem;
 	public int OrderNumber;
 	int m = 0;
+	private bool display;
 
 	// Use this for initialization
 	void Start()
 	{
+		display = true;
+		if (PlayerPrefs.GetInt("win") == 10 || PlayerPrefs.GetInt("win") == 1)
+		{
+			if (PlayerPrefs.GetInt("win") == 10)
+			{
+				PatternDisplay.text = "You won!";
+			}
+			else if (PlayerPrefs.GetInt("win") == 1)
+			{
+				PatternDisplay.text = "Oops, I forgot something! - A Quote by Aaron Freedman";
+			}
+			PlayerPrefs.SetInt("win", 0);
+			display = false;
+		}
 		Items = new string[4];
 		Colors = new string[4];
 		Items[0] = "shirt";
@@ -84,22 +99,24 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (m == 0)
+		if (display)
 		{
-			PatternDisplay.text = ("The pattern is: ");
-		}
-		
-		if (Input.GetKeyDown(KeyCode.Space) && m != OrderNumber)
-		{
-			PatternDisplay.text = ColorItem[m].ToString();
-			m++;
-		}
-		if (m == OrderNumber)
-		{
-			if (Input.GetKeyDown(KeyCode.Space))
+			if (m == 0)
 			{
-				SceneManager.LoadScene(1);
+				PatternDisplay.text = ("The pattern is: ");
 			}
+			if (Input.GetKeyDown(KeyCode.Space) && m != OrderNumber)
+			{
+				PatternDisplay.text = ColorItem[m].ToString();
+				m++;
+			}
+			if (m == OrderNumber)
+			{
+				if (Input.GetKeyDown(KeyCode.Space))
+				{
+					SceneManager.LoadScene(1);
+				}
+			}		
 		}
 	}
 }

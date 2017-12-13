@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class suitcase : MonoBehaviour
 {
@@ -34,13 +35,20 @@ public class suitcase : MonoBehaviour
 		currentlyHolding.Add(other.gameObject.name);
 		Debug.Log(currentlyHolding.Count);
 		Debug.Log("ADDED");
-		if (CheckIfFinished())
+		if (currentlyHolding.Count == sizeOfOrder)
 		{
-			Debug.Log("YOU WIN");
-		}
-		else
-		{
-			Debug.Log("YOU FUCKED UP");
+			if (CheckIfFinished())
+			{
+				Debug.Log("YOU WIN");
+				PlayerPrefs.SetInt("win", 10);
+				SceneManager.LoadScene(0);
+			}
+			else
+			{
+				Debug.Log("YOU FUCKED UP");
+				PlayerPrefs.SetInt("win", 1);
+				SceneManager.LoadScene(0);
+			}
 		}
 	}
 

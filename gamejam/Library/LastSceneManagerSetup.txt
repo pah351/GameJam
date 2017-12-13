@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/PackOpen.unity
+- path: Assets/scenes/packingGameScene.unity
   isLoaded: 1
   isActive: 1
